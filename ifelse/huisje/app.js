@@ -3,27 +3,73 @@ class App
     runApplication()
     {
         console.log("hello world!");
+        
         let canvas = document.getElementById("canvasId")
-
         console.log(canvas)
 
+        let randomInt = Math.floor(Math.random() * 2);
+        console.log(randomInt);
+
         let g = canvas.getContext("2d");
-        //square!
-        g.fillRect(0,0,10,10);
-
-        //triangle
-        //g.beginPath();
-        //g.fillstyle = "yellow";
-        //g.moveTo(20,20);
-        //g.lineTo(300, 300);
-        //g.lineTo(580, 20);
-        //g.closePath();
-        //g.stroke();
-        //g.fill();
 
 
-        
         //house
+
+        //background at day
+        if (randomInt == 0)
+        {
+            //sky
+            g.beginPath();
+            g.strokeStyle = "#d0eef2";
+            g.fillStyle = "#d0eef2";
+            g.moveTo(0,0);
+            g.lineTo(0, 1000);
+            g.lineTo(1000, 1000);
+            g.lineTo(1000, 0);
+            g.closePath();
+            g.stroke();
+            g.fill();
+
+            //grass
+            g.beginPath();
+            g.strokeStyle = "#789e75";
+            g.fillStyle = "#789e75";
+            g.moveTo(0, 175);
+            g.lineTo(1000, 175);
+            g.lineTo(1000, 1000);
+            g.lineTo(0, 1000);
+            g.closePath();
+            g.stroke();
+            g.fill();
+        }
+
+        //background at night
+        if (randomInt == 1)
+        {
+            //sky
+            g.beginPath();
+            g.strokeStyle = "#10213b";
+            g.fillStyle = "#10213b";
+            g.moveTo(0,0);
+            g.lineTo(0, 1000);
+            g.lineTo(1000, 1000);
+            g.lineTo(1000, 0);
+            g.closePath();
+            g.stroke();
+            g.fill();
+
+            //grass
+            g.beginPath();
+            g.strokeStyle = "#243623";
+            g.fillStyle = "#243623";
+            g.moveTo(0, 175);
+            g.lineTo(1000, 175);
+            g.lineTo(1000, 1000);
+            g.lineTo(0, 1000);
+            g.closePath();
+            g.stroke();
+            g.fill();
+        }
 
         //front
         g.beginPath();
@@ -49,7 +95,9 @@ class App
         g.stroke();
         g.fill();
 
-        //door inside
+        //door inside at day
+        if (randomInt == 0)
+        {
         g.beginPath();
         g.fillStyle = "black";
         g.strokeStyle = "black";
@@ -60,6 +108,22 @@ class App
         g.stroke();
         g.fill();
         g.closePath();
+        }
+
+        //door inside at night
+        if (randomInt == 1)
+        {
+        g.beginPath();
+        g.fillStyle = "#ffb347";
+        g.strokeStyle = "#d98002";
+        g.moveTo(600, 510);
+        g.lineTo(680, 490);
+        g.lineTo(680, 590);
+        g.lineTo(600, 590);
+        g.stroke();
+        g.fill();
+        g.closePath();
+        }
 
         //door
         g.beginPath();
@@ -98,7 +162,10 @@ class App
         g.stroke();
         g.fill();
 
-        //window
+        //window at day
+
+        if (randomInt == 0)
+        {
         g.beginPath();
         g.fillStyle = "lightblue";
         g.strokeStyle = "#5c4238";
@@ -116,6 +183,46 @@ class App
         g.lineTo(310, 469);
         g.closePath();
         g.stroke();
+        }
+
+        //window at night
+        if (randomInt == 1)
+        {
+        //main window
+        g.beginPath();
+        g.fillStyle = "#ffb347";
+        g.strokeStyle = "#5c4238";
+        g.moveTo(265, 350);
+        g.lineTo(265, 450);
+        g.lineTo(363, 490);
+        g.lineTo(365, 385);
+        g.lineTo(265, 350);
+        g.closePath();
+        g.fill();
+        g.stroke();
+        g.beginPath();
+        g.strokeStyle = "#d98002"
+        g.moveTo(310, 365);
+        g.lineTo(310, 469);
+        g.closePath();
+        g.stroke();
+
+        //light
+        g.beginPath();
+        g.fillStyle = "rgba(255, 179, 71, 0.5)"
+        g.strokeStyle = "rgba(255, 179, 71, 0.5)"
+        g.moveTo(265, 450);
+        g.lineTo(235, 530)
+        g.lineTo(50, 615);
+        g.lineTo(250, 710);
+        g.lineTo(360, 585)
+        g.lineTo(362, 489);
+
+        g.closePath();
+        g.stroke();
+        g.fill();
+
+        }
     }
 }
 
