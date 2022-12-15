@@ -2,11 +2,16 @@ class App
 {
     runApplication()
     {
+        this.drawhouse()
+    }
+
+    drawhouse(x, y)
+    {
         console.log("hello world!");
         
         let canvas = document.getElementById("canvasId")
         console.log(canvas)
-
+        
         let randomInt = Math.floor(Math.random() * 2);
         console.log(randomInt);
 
